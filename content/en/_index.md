@@ -1,12 +1,12 @@
 ---
-title: Goldydocs
-description: Porridge temperature assessment &mdash; in the cloud!
+title: Kimi Embroidery
+description: Broken thread detection — in the cloud!
 params:
   body_class: td-navbar-links-all-active
 ---
 
 {{% blocks/cover
-  title="Welcome to Goldydocs: A Docsy Example and Starter Project!"
+  title="Welcome to the Kimi Embroidery Machine Repair Knowledge Base."
   height="full td-below-navbar"
   image_anchor="top"
 %}}
@@ -22,17 +22,17 @@ params:
 {.display-6}
 
 <!-- prettier-ignore -->
+
 <div class="td-cta-buttons my-5">
   <a {{% _param btn-lg primary %}} href="docs/">
     Learn more
   </a>
-  <a {{% _param btn-lg secondary %}}
-    href="{{% param github_repo %}}"
-    target="_blank" rel="noopener noreferrer">
-    Get the code
-    {{% _param FA brands github "" %}}
+  <a class="btn btn-lg btn-secondary" href="https://www.facebook.com/huang.flora.71" target="_blank" rel="noopener noreferrer">
+  Book Service
+  <i class="fab fa-facebook"></i>
   </a>
 </div>
+
 
 {{% blocks/link-down color="info" %}}
 
@@ -40,41 +40,34 @@ params:
 
 {{% blocks/lead color="white" %}}
 
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
-
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+Precision Analytics · Cloud-Based Maintenance – Kimi Embroidery Repair, making every machine behave.
 
 {{% /blocks/lead %}}
 
 {{% blocks/section color="primary" type="row" %}}
 
-{{% blocks/feature title="New chair metrics!" icon="fa-lightbulb" %}}
+{{% blocks/feature title="New feature alert!" icon="fa-lightbulb" %}}
 
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
+Step into the repair station and find the answers you need. More upgrades on the way – watch this space! 
 
 {{% /blocks/feature %}}
 
 {{% blocks/feature
-  title="Contributions welcome!" icon="fab fa-github"
-  url="https://github.com/google/docsy-example"
+  title="Contributions welcome!" icon="fab fa-facebook"
+  url="https://www.facebook.com/groups/5787914854644031"
 %}}
 
-We do a [Pull Request](https://github.com/google/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
+We share repair tips, service updates, and quick solutions on our Facebook page.  
+Feel free to follow us, send a message, or just say hi – we're always happy to help!
 
 {{% /blocks/feature %}}
 
 {{% blocks/feature
-  title="Follow us on X!" icon="fab fa-x-twitter"
-  url="https://x.com/docsydocs"
+  title="Chat with us on Messenger!" icon="fab fa-facebook"
+  url="https://www.facebook.com/huang.flora.71#"
 %}}
 
-For announcement of latest features etc.
+Contact us via Messenger for repair help, training sign‑ups, and the latest deals – all in one place!
 
 {{% /blocks/feature %}}
 

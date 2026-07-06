@@ -1,12 +1,12 @@
 ---
-title: About Goldydocs
+title: About Kimi
 linkTitle: About
-description: A sample site using the Docsy Hugo theme.
+description: About Kimi Embroidery Repair Tech Station.
 menu: { main: { weight: 10 } }
 ---
 
 {{% blocks/cover
-  title="About Goldydocs"
+  title="About Kimi Embroidery Repair Tech Station"
   height="auto td-below-navbar"
   image_anchor="bottom"
 %}}
@@ -19,10 +19,11 @@ menu: { main: { weight: 10 } }
 
 {{% blocks/lead color="white" %}}
 
-Goldydocs is a sample site using the [Docsy](https://github.com/google/docsy)
-Hugo theme that shows what it can do and provides you with a template site
-structure. It’s designed for you to clone and edit as much as you like. See the
-different sections of the documentation and site for more ideas.
+Kimi Embroidery Repair Tech Station is a professional service platform for embroidery machine users and maintenance technicians, built with the smartstitch  theme.
+
+This site provides embroidery machine fault diagnosis, repair guides, maintenance tutorials, parts information, and industry news, helping users quickly resolve equipment issues and improve repair efficiency.
+
+Whether you are a factory operator, maintenance technician, or embroidery enthusiast, you'll find practical technical resources and solutions here.
 
 {{% /blocks/lead %}}
 
