@@ -54,7 +54,10 @@ An embroidery needle is designed with a specific front and back direction.
 {{< /imgproc >}}
 
 {{< imgproc front.jpg Crop "600x1108" >}}
-  Correct needle direction（front）
+  Correct needle direction（frontcmd
+git add .
+git commit -m "更新内容"
+git push origin main）
 {{< /imgproc >}}
 
 When the needle is installed incorrectly:
