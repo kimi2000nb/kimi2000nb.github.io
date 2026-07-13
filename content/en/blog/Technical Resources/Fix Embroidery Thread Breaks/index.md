@@ -1,6 +1,6 @@
 ---
 date: 2026-07-10
-title: How to Fix Embroidery Thread Breaks Caused by Incorrect Needle Direction
+title: Why Incorrect Needle Direction Causes Thread Breaks
 linkTitle: Thread Break Caused by Needle Installation Error
 description: >
   Learn how to diagnose and fix embroidery thread breaks caused by incorrect
