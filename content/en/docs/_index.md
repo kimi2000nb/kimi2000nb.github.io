@@ -2,28 +2,67 @@
 title: Documentation
 linkTitle: Docs
 menu: { main: { weight: 20 } }
+
 ---
 
-{{% pageinfo color="warning td-max-width-on-larger-screens mx-0" %}}
+{{% pageinfo color="primary td-max-width-on-larger-screens mx-0" %}}
 
-This is a placeholder page. Replace it with your own content.
+Welcome to the Kimi Embroidery Repair Tech Station Documentation Center.
+
+Find troubleshooting guides, maintenance instructions, and technical resources to help you operate and maintain your embroidery machine.
 
 {{% /pageinfo %}}
 
-This section is where the user documentation for your project lives - all the
-information your users need to understand and successfully use your project.
+## Embroidery Machine Documentation
 
-For large documentation sets we recommend adding content under the headings in
-this section, though if some or all of them don’t apply to your project feel
-free to remove them or add your own. For a smaller example, see the
-[Docsy User Guide](https://docsy.dev/docs/), built from the
-[`docsy.dev`](https://github.com/google/docsy/tree/main/docsy.dev) directory of
-the Docsy monorepo.
+This section contains technical documentation for embroidery machine users, including operation guides, troubleshooting procedures, maintenance instructions, and repair references.
 
-Other content such as marketing material, case studies, and community updates
-should live in the [About](/about/) and [Community](/community/) pages.
+Our goal is to provide clear and practical solutions that help users understand their machines and solve common problems efficiently.
 
-Find out how to use the Docsy theme in the
-[Docsy User Guide](https://docsy.dev/docs/). You can learn more about how to
-organize your documentation (and how we organized this site) in
-[Organizing Your Content](https://docsy.dev/docs/best-practices/organizing-content/).
+## Troubleshooting Guides
+
+Find solutions for common embroidery machine issues:
+
+- Main shaft errors
+- Thread breaks
+- Thread tension problems
+- Bobbin case issues
+- Needle installation and replacement
+- Thread trimming problems
+- Color change and position errors
+- Machine initialization failures
+
+## Maintenance Guides
+
+Regular maintenance helps improve machine performance and extend equipment life.
+
+Documentation includes:
+
+- Cleaning procedures
+- Lubrication instructions
+- Hook and bobbin area maintenance
+- Needle and thread system checks
+- Preventive maintenance recommendations
+
+## Technical Resources
+
+Explore detailed technical information about embroidery machine components, repair methods, and professional troubleshooting techniques.
+
+Resources are continuously updated with new solutions based on real-world service experience.
+
+## Machine Support
+
+If you cannot find a solution in the documentation, provide:
+
+- Machine model
+- Error message
+- Photos or videos of the problem
+- Description of the situation
+
+This information helps diagnose issues more accurately.
+
+## About Kimi Embroidery Repair Tech Station
+
+Kimi Embroidery Repair Tech Station provides embroidery machine technical support, repair knowledge, and practical solutions for embroidery professionals and machine users.
+
+Our mission is to make embroidery machine troubleshooting easier through clear documentation and reliable technical guidance.

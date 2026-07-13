@@ -1,0 +1,3 @@
+---
+title: Machine Settings
+---
