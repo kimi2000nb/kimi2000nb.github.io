@@ -25,13 +25,30 @@ Prepare:
 
 {{< youtube VE9APNo_7q4>}}
 
+
+
+{{< youtube ufQRLilSEL8>}}
+
+
 ## Step 3: Install the Cap Driver
 
 
 
 ## Step 4: Adjust the Position
 
+### 1.Type 1 smartstitch1501 （1501ultra &plus）Hat Driver Center Adjustment
 
+{{< youtube _xm2nytgHd0>}}
+
+
+
+### 2.smartstitch1001（1201 &1201plus）Hat Driver Center Adjustment
+
+1.
+{{< youtube nj4pNaBRlwc>}}
+2.
+
+{{< youtube GJyVPq26EJY>}}
 
 ## Step 5: Test Cap Embroidery
 
