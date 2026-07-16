@@ -3,7 +3,7 @@ date: 2026-07-08
 title: How to Fix Main Shaft Error (Error! [10000001] info(00000000))
 linkTitle: Main Shaft Error
 description: >
-  Learn how to diagnose and resolve the Main Shaft Error
+  Learn how to diagnose and resolve the Main Shaft Error.author: Kimi Embroidery Repair Tech Station  
   (Error! [10000001] info(00000000)) on SmartStitch embroidery machines.
 author: Kimi Embroidery Repair Tech Station
 

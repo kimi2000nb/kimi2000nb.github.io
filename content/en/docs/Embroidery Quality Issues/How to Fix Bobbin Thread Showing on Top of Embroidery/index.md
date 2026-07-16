@@ -3,7 +3,7 @@ title: How to Fix Bobbin Thread Showing on Top of Embroidery
 description: >
   Learn how to troubleshoot and fix bobbin thread showing on the top side
   of embroidery designs. This guide explains common causes including thread
-  tension, bobbin settings, needle selection, and stabilization.
+  tension, bobbin settings, needle selection, and stabilization.Created by Kimi
 
 resources:
   - src: "bobbintop.jpg"

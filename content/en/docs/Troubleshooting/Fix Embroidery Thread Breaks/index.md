@@ -1,19 +1,20 @@
 ---
 date: 2026-07-10
-title: Why Incorrect Needle Direction Causes Thread Breaks
+title: Why Incorrect Needle Direction Causes Thread Breaks 
 linkTitle: Thread Break Caused by Needle Installation Error
 description: >
   Learn how to diagnose and fix embroidery thread breaks caused by incorrect
   needle direction. This guide explains why thread becomes frayed and how to
   properly install and check the needle on SmartStitch embroidery machines.
-author: Kimi Embroidery Repair Tech Station
+
+  author: Kimi Embroidery Repair Tech Station
 
 
 ---
 
 
 
-**If your embroidery thread keeps breaking and the broken area looks fuzzy, frayed, or damaged, the problem may not be thread tension. In many cases, the cause is an incorrectly installed needle or incorrect needle direction.**
+**If your embroidery thread keeps breaking and the broken area looks fuzzy, frayed, or damaged, the problem may not be thread tension. In many cases, the cause is an incorrectly installed needle or incorrect needle direction. author: Kimi Embroidery Repair Tech Station**
 
 ## Symptoms
 
