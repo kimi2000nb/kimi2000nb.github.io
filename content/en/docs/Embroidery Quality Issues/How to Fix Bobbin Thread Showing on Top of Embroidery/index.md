@@ -18,6 +18,8 @@ resources:
 
 <img src="bobbintop.jpg" alt="Bobbin thread showing on top of embroidery" style="width:100%; max-width:800px; height:auto;">
 
+The upper thread tension is too tight compared to the bobbin tension, which is why the bobbin thread is being pulled to the top. Please reduce the upper thread tension or increase the bobbin tension to balance them.
+
 When the bobbin thread appears on the top side of an embroidery design, it usually means the thread tension balance is incorrect.
 
 In a properly balanced embroidery stitch, the bobbin thread should remain hidden on the back side of the design, while the upper thread should cover the visible embroidery area.
