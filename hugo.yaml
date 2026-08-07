@@ -88,11 +88,14 @@ params:
   version_menu: Releases
   archived_version: false
   version: 0.15.1-dev
-  github_repo: “”
+  # 设置为你的 GitHub Pages 仓库地址（非空）
+  github_repo: https://github.com/kimi2000nb/kimi2000nb.github.io
   github_project_repo: https://github.com/google/docsy
   github_branch: main
-  gcs_engine_id: d72aa9b2712488cc3
-  offlineSearch: false
+  # Google Custom Search 已禁用（本地开发环境无法工作）
+  # gcs_engine_id: d72aa9b2712488cc3
+  # 启用本地离线搜索（Lunr.js），可在 localhost 下正常使用
+  offlineSearch: true
   prism_syntax_highlighting: false
 
   copyright:
