@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>How to Adjust Thread Trimming Parameters on kimi</title>
+		<link>http://localhost:1313/docs/machine-settings/how-to-adjust-thread-trimming-parameters/</link>
+		<description>Recent content in How to Adjust Thread Trimming Parameters on kimi</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/docs/machine-settings/how-to-adjust-thread-trimming-parameters/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>How to Adjust Thread Trimming Parameters</title>
+				<link>http://localhost:1313/docs/machine-settings/how-to-adjust-thread-trimming-parameters/how-to-adjust-thread-trimming-parameters/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/docs/machine-settings/how-to-adjust-thread-trimming-parameters/how-to-adjust-thread-trimming-parameters/</guid>
+				<description>&lt;h1 id=&#34;how-to-adjust-thread-trimming-parameters&#34;&gt;How to Adjust Thread Trimming Parameters&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#how-to-adjust-thread-trimming-parameters&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;Proper thread trimming settings are important for maintaining embroidery quality and ensuring stable stitching after color changes or trims.&lt;/p&gt;&#xA;&lt;p&gt;Incorrect trimming parameters may cause the following issues:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Thread tail too short after trimming&lt;/strong&gt;&lt;br&gt;&#xA;The remaining thread tail is not long enough, causing the upper thread to easily pull out of the needle when embroidery starts again.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Thread tail too long after trimming&lt;/strong&gt;&lt;br&gt;&#xA;Excess thread remains on the back of the embroidery, creating loose thread tails and affecting the finished appearance.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

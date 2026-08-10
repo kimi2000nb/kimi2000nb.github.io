@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Embroidery Quality Issues on kimi</title>
+		<link>https://kimi2000nb.github.io/docs/embroidery-quality-issues/</link>
+		<description>Recent content in Embroidery Quality Issues on kimi</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="https://kimi2000nb.github.io/docs/embroidery-quality-issues/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Computer Cannot Detect the SmartStitch Machine — Check Settings</title>
+				<link>https://kimi2000nb.github.io/docs/embroidery-quality-issues/gaps-between-stitches/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/docs/embroidery-quality-issues/gaps-between-stitches/</guid>
+				<description>&lt;h1 id=&#34;computer-cannot-detect-the-smartstitch-machine--check-settings&#34;&gt;Computer Cannot Detect the SmartStitch Machine — Check Settings&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#computer-cannot-detect-the-smartstitch-machine--check-settings&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;One of the most frustrating issues in digital embroidery is when your computer simply does not recognise the SmartStitch machine. This prevents design transfer, parameter adjustments, and real‑time monitoring.&lt;/p&gt;&#xA;&lt;p&gt;Most detection failures are &lt;strong&gt;not hardware‑related&lt;/strong&gt; – they originate from incorrect settings, driver conflicts, or cable/port issues. Follow this structured troubleshooting process to quickly isolate and fix the problem.&lt;/p&gt;&#xA;&lt;img src=&#34;smartstitch_not_detected.jpg&#34; alt=&#34;Computer showing no device detected&#34; style=&#34;width:100%; max-width:800px; height:auto;&#34;&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;common-root-causes&#34;&gt;Common Root Causes&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#common-root-causes&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Machine not powered on or in the wrong mode (e.g., offline / manual)&lt;/li&gt;&#xA;&lt;li&gt;Faulty or loose USB/serial cable&lt;/li&gt;&#xA;&lt;li&gt;Incorrect COM port or baud rate settings in the software&lt;/li&gt;&#xA;&lt;li&gt;Outdated or missing USB drivers&lt;/li&gt;&#xA;&lt;li&gt;Firewall or antivirus blocking the communication port&lt;/li&gt;&#xA;&lt;li&gt;Multiple software instances accessing the same port&lt;/li&gt;&#xA;&lt;li&gt;Damaged port on the computer or on the machine&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;stepbystep-diagnostic-process&#34;&gt;Step‑by‑Step Diagnostic Process&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#stepbystep-diagnostic-process&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Perform these checks in the recommended order – from the simplest to the most advanced.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How to Fix Bobbin Thread Showing on Top of Embroidery</title>
+				<link>https://kimi2000nb.github.io/docs/embroidery-quality-issues/how-to-fix-bobbin-thread-showing-on-top-of-embroidery/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/docs/embroidery-quality-issues/how-to-fix-bobbin-thread-showing-on-top-of-embroidery/</guid>
+				<description>&lt;h1 id=&#34;how-to-fix-bobbin-thread-showing-on-top-of-embroidery&#34;&gt;How to Fix Bobbin Thread Showing on Top of Embroidery&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#how-to-fix-bobbin-thread-showing-on-top-of-embroidery&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;img src=&#34;bobbintop.jpg&#34; alt=&#34;Bobbin thread showing on top of embroidery&#34; style=&#34;width:100%; max-width:800px; height:auto;&#34;&gt;&#xD;&#xA;&lt;p&gt;The upper thread tension is too tight compared to the bobbin tension, which is why the bobbin thread is being pulled to the top. Please reduce the upper thread tension or increase the bobbin tension to balance them.&lt;/p&gt;&#xA;&lt;p&gt;When the bobbin thread appears on the top side of an embroidery design, it usually means the thread tension balance is incorrect.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

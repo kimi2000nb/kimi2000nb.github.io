@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Machine Specifications on kimi</title>
+		<link>http://localhost:1313/docs/machine-specifications/electrical-specifications/</link>
+		<description>Recent content in Machine Specifications on kimi</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/docs/machine-specifications/electrical-specifications/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
+</rss>
