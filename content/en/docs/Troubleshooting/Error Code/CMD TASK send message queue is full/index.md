@@ -23,3 +23,21 @@ CMD TASK send message queue is full Error!
 
 
 # Please shut down the machine and restart it. You can also leave it powered off overnight and try again the next day.
+
+## Please check the system version
+
+{{< youtube vCB-Ua1G-a0 >}} 
+
+
+
+### This is the wrong version. The machine cannot recognize the version information.❌️
+
+
+
+<img src="wrong.png" alt="normal" style="width:100%; max-width:800px; height:auto;">
+
+
+
+### This is the correct version. The machine can recognize the version information.✅️
+
+<img src="correct.png" alt="normal" style="width:100%; max-width:800px; height:auto;">
