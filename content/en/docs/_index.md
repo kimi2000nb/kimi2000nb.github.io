@@ -61,6 +61,9 @@ If you cannot find a solution in the documentation, provide:
 
 This information helps diagnose issues more accurately.
 
+<!-- Visitor Badge 示例 -->
+<span>**Visitors** ：<img src="https://visitor-badge.laobi.icu/badge?page_id=kimi2000nb.github.io"/></span>
+
 ## About Kimi Embroidery Repair Tech Station
 
 Kimi Embroidery Repair Tech Station provides embroidery machine technical support, repair knowledge, and practical solutions for embroidery professionals and machine users.
