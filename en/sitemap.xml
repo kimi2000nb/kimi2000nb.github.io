@@ -40,13 +40,7 @@
                 href="https://kimi2000nb.github.io/fa/"
                 />
   </url><url>
-    <loc>https://kimi2000nb.github.io/blog/2026/07/10/new-machine-updates/</loc>
-    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://kimi2000nb.github.io/blog/news/</loc>
-    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/blog/releases/</loc>
     <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kimi2000nb.github.io/blog/2026/07/10/in-depth-monoliths-detailed-spec/</loc>
@@ -135,6 +129,8 @@
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/machine-specifications/</loc>
   </url><url>
+    <loc>https://kimi2000nb.github.io/blog/releases/</loc>
+  </url><url>
     <loc>https://kimi2000nb.github.io/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -163,12 +159,11 @@
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/machine-specifications/electrical-specifications/</loc>
   </url><url>
+    <loc>https://kimi2000nb.github.io/blog/1/01/01/smartstitch-system-update-full-uncut-walkthrough/</loc>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/machine-settings/smartstitch-system-update/smartstitch-system-update--full-uncut-walkthrough/</loc>
+  </url><url>
     <loc>https://kimi2000nb.github.io/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/tags/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="fa"
@@ -178,6 +173,11 @@
                 rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/tags/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/machine-settings/how-to-adjust-thread-trimming-parameters/</loc>
