@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embroidery Thread Break Diagnosis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
+            padding: 32px 36px 40px;
+            transition: all 0.25s;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+
+        .header .title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a2332;
+            letter-spacing: 0.5px;
+        }
+
+        .header .step-badge {
+            background: #eef2f7;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .progress-wrap {
+            width: 100%;
+            height: 6px;
+            background: #e9ecf0;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #2e7d32;
+            border-radius: 6px;
+            transition: width 0.35s ease;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 8px 4px 16px 4px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 12px;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+        .image-gallery::-webkit-scrollbar-thumb {
+            background: #c0c8d4;
+            border-radius: 10px;
+        }
+        .image-gallery::-webkit-scrollbar-track {
+            background: #eef2f7;
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e6ec;
+            background: #f7f9fc;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 8px 12px;
+            font-size: 12px;
+            color: #4a5a6a;
+            background: #fff;
+            text-align: center;
+            line-height: 1.4;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item .badge-count {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .gallery-placeholder {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 186px;
+            border-radius: 12px;
+            border: 2px dashed #d0d7e0;
+            background: #fafbfc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #8a9aa8;
+            font-size: 13px;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .gallery-placeholder .icon {
+            font-size: 32px;
+            margin-bottom: 4px;
+            opacity: 0.4;
+        }
+
+        /* ---- 灯箱样式（支持缩放和平移） ---- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            cursor: pointer;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            object-fit: contain;
+            cursor: grab;
+            transition: transform 0.05s linear;  /* 平滑但响应快速 */
+            transform-origin: 0 0;  /* 以左上角为原点，方便计算 */
+            will-change: transform;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .lightbox img:active {
+            cursor: grabbing;
+        }
+
+        .lightbox .close-hint {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 16px;
+            opacity: 0.6;
+            font-weight: 300;
+            pointer-events: none;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a2332;
+            text-align: center;
+            margin: 4px 0 8px 0;
+            line-height: 1.6;
+        }
+
+        .question-desc {
+            text-align: center;
+            color: #6b7a8f;
+            font-size: 14px;
+            margin-bottom: 18px;
+            background: #f8fafc;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin: 12px 0 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.5px;
+            min-width: 130px;
+        }
+
+        .btn-yes {
+            background: #2e7d32;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.30);
+        }
+        .btn-yes:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .btn-no {
+            background: #c62828;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.25);
+        }
+        .btn-no:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            border-top: 1px solid #eef2f7;
+            padding-top: 16px;
+        }
+
+        .btn-nav {
+            background: #eef2f7;
+            color: #2c3e50;
+            padding: 8px 22px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-nav:hover {
+            background: #dce1e8;
+        }
+
+        .btn-nav-primary {
+            background: #e3f2fd;
+            color: #0a3d7a;
+        }
+        .btn-nav-primary:hover {
+            background: #bbdefb;
+        }
+
+        .end-page {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+
+        .end-page .big-icon {
+            font-size: 72px;
+            margin-bottom: 12px;
+        }
+
+        .end-page .end-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .end-page .end-desc {
+            font-size: 16px;
+            color: #4a5a6a;
+            max-width: 440px;
+            margin: 0 auto 20px;
+            line-height: 1.7;
+        }
+
+        .end-page .end-detail {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-align: left;
+            font-size: 14px;
+            color: #2c3e50;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .btn-restart {
+            background: #eef2f7;
+            color: #1a2332;
+            padding: 12px 36px;
+            font-size: 16px;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-restart:hover {
+            background: #dce1e8;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .step-counter {
+            text-align: center;
+            font-size: 13px;
+            color: #8a9aa8;
+            margin-top: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 14px 28px;
+            }
+            .header .title {
+                font-size: 18px;
+            }
+            .question-text {
+                font-size: 17px;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 16px;
+                min-width: 100px;
+            }
+            .btn-group {
+                gap: 14px;
+            }
+            .gallery-item {
+                width: 160px;
+            }
+            .gallery-item img {
+                height: 110px;
+            }
+            .gallery-placeholder {
+                width: 160px;
+                height: 146px;
+            }
+            .lightbox {
+                padding: 20px;
+            }
+            .lightbox .close-hint {
+                font-size: 13px;
+                right: 16px;
+                top: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="app">
+
+        <!-- Header -->
+        <div class="header">
+            <span class="title">🧵 Thread Break Diagnosis</span>
+            <span class="step-badge" id="stepBadge">Step 1 / 8</span>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent">
+
+            <!-- Image Gallery -->
+            <div class="image-gallery" id="imageGallery"></div>
+
+            <!-- Question -->
+            <div class="question-text" id="questionText">Is the threading path correct?</div>
+            <div style="text-align:center;">
+                <span class="question-desc" id="questionDesc">Check against the threading diagram</span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn-group" id="btnGroup">
+                <button class="btn btn-yes" id="btnYes">✅ Yes</button>
+                <button class="btn btn-no" id="btnNo">❌ No</button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="nav-row">
+                <button class="btn-nav" id="btnBack">← Back</button>
+                <button class="btn-nav btn-nav-primary" id="btnReset">⟳ Restart</button>
+            </div>
+
+            <div class="step-counter" id="stepCounter">Step 1 of 8</div>
+        </div>
+
+        <!-- End Page -->
+        <div class="end-page hidden" id="endPage">
+            <div class="big-icon" id="endIcon">✅</div>
+            <div class="end-title" id="endTitle">Diagnosis Complete</div>
+            <div class="end-desc" id="endDesc">The issue has been resolved. You can continue embroidering.</div>
+            <div class="end-detail hidden" id="endDetail"></div>
+            <button class="btn-restart" onclick="resetDiagnosis()">🔄 Restart Diagnosis</button>
+        </div>
+
+        <!-- Lightbox (移除 onclick，改用 JS 监听) -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-hint">✕ Click background to close · Scroll to zoom · Drag to pan · Double‑click to reset</span>
+            <img id="lightboxImg" src="" alt="Enlarged view" />
+        </div>
+
+    </div>
+
+    <script>
+        // ============================================================
+        //  DIAGNOSIS DATA — 使用绝对路径指向 /thread-break/images/
+        // ============================================================
+        const STEPS = [{
+            id: 1,
+            question: 'Is the threading path correct?',
+            desc: 'Check each thread guide, take‑up lever, and the needle eye.',
+            images: [
+                { src: '/thread-break/images/step1-01.jpg', caption: 'Full threading path' },
+                { src: '/thread-break/images/step1-02.jpg', caption: 'Make sure the thread go through the clip' },
+                { src: '/thread-break/images/step1-03.jpg', caption: 'make sure the thread go through this groove' },
+                { src: '/thread-break/images/step1-04.jpg', caption: 'Make sure the thread go through this pig tail hook' },
+                { src: '/thread-break/images/step1-05.jpg', caption: 'Make sure you wind the thread around the wheel one and half times' },
+                { src: '/thread-break/images/step1-06.jpg', caption: 'Make sure the thread go through the right of this spin' },
+                { src: '/thread-break/images/step1-07.jpg', caption: 'Make sure the thread go through the clip' } ,
+                { src: '/thread-break/images/step1-08.jpg', caption: 'Make sure the thread go through the take-up lever correctly' },
+                { src: '/thread-break/images/step1-09.jpg', caption: 'Make sure the thread go through the clip' },
+                { src: '/thread-break/images/step1-10.jpg', caption: 'Make sure the thread go through the needle' },
+                { src: '/thread-break/images/step1-11.jpg', caption: 'Let the rest of the thread go back to the clip' }
+            ],
+            yes: 2,
+            no: { action: 'fix', text: 'Rethread the machine', backTo: 1 }
+        }, {
+            id: 2,
+            question: 'Is the top tension scale between 2–4?',
+            desc: 'Check the tension dial – the indicator should be within the standard range.',
+            images: [
+                { src: '/thread-break/images/step2-01.jpg', caption: 'Tension dial – front' },
+                { src: '/thread-break/images/step2-02.jpg', caption: 'Set the top thread tension to 95–100.' }                
+            ],
+            yes: 3,
+            no: { action: 'fix', text: 'Adjust to scale 2–4', backTo: 2 }
+        }, {
+            id: 3,
+            question: 'Is the bobbin tension correct?',
+            desc: 'Pull the thread gently – the bobbin case should descend slowly without sudden drops.',
+            images: [
+                { src: '/thread-break/images/step3-01.jpg', caption: 'Correct bobbin tension installation and testing.' },
+                { src: '/thread-break/images/step3-02.jpg', caption: 'The bobbin tension is 25.' }
+            ],
+            yes: 4,
+            no: { action: 'fix', text: 'Adjust bobbin spring screw (1/4 turn at a time)', backTo: 3 }
+        }, {
+            id: 4,
+            question: 'Is the needle installed in the correct orientation?',
+            desc: 'Flat side must face back (Brother/Tajima) or right (Barudan) depending on your machine.',
+            images: [
+                { src: '/thread-break/images/step4-01.png', caption: 'The needle eye should face 6 o’clock, slightly to the right.' },
+                { src: '/thread-break/images/step4-02.jpg', caption: 'The front of the needle.' },
+                { src: '/thread-break/images/step4-03.jpg', caption: 'The back of the needle.' }
+            ],
+            yes: 5,
+            no: { action: 'fix', text: 'Reinstall needle (flat side back/right)', backTo: 4 }
+        }, {
+            id: 5,
+            question: 'Is the needle bent, blunt, or the wrong size?',
+            desc: 'Check for burrs, bends, or mismatched size for the fabric type.',
+            images: [
+                { src: '/thread-break/images/step5-01.png', caption: 'We usually use a 75/11 needle.' }               
+            
+            ],
+            yes: 6,
+            no: { action: 'fix', text: 'Replace with the correct needle size', backTo: 5 }
+        }, {
+            id: 6,
+            question: 'Is the rotary hook positioned correctly?This is a special case and may require an experienced technician to inspect it.',
+            desc: 'Hook tip should be 0.1–0.2mm from the needle and 1.5–2.0mm above the needle eye.',
+            images: [
+                { src: '/thread-break/images/step6-01.jpg', caption: 'The machine is at 202°.Hook-to‑needle gap' },
+                { src: '/thread-break/images/step6-02.jpg', caption: 'The machine is at 202°.Correct hook position' }
+            ],
+            yes: 7,
+            no: { action: 'fix', text: 'Adjust hook position (loosen and fine‑tune)', backTo: 6 }
+        }, {
+            id: 7,
+            question: 'Is the embroidery speed too high?',
+            desc: 'For shirts, the embroidery speed is around 750 RPM. For hats, it’s around 600 RPM.',
+            images: [
+                { src: '/thread-break/images/step7-01.bmp', caption: '750 RPM For shirts' },
+                { src: '/thread-break/images/step7-02.bmp', caption: '600 RPM For hats' }
+            ],
+            yes: 8,
+            no: { action: 'fix', text: 'Reduce speed by 20–30%', backTo: 7 }
+        }, {
+            id: 8,
+            question: 'Is there an issue with the fabric or stabilizer?',
+            desc: 'Check hoop tension, fabric elasticity, and stabilizer type.',
+            images: [
+                { src: '/thread-break/images/step8-01.jpg', caption: 'One layer of fabric with two layers of stabilizer.' },               
+            ],
+            yes: { action: 'end', result: 'fail' },
+            no: { action: 'fix', text: 'Review the fabric troubleshooting guide', backTo: 8 }
+        }];
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+        let history = [];
+
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+        const $ = (id) => document.getElementById(id);
+        const mainContent = $('mainContent');
+        const endPage = $('endPage');
+        const stepBadge = $('stepBadge');
+        const progressBar = $('progressBar');
+        const questionText = $('questionText');
+        const questionDesc = $('questionDesc');
+        const stepCounter = $('stepCounter');
+        const imageGallery = $('imageGallery');
+        const btnYes = $('btnYes');
+        const btnNo = $('btnNo');
+        const btnBack = $('btnBack');
+        const btnReset = $('btnReset');
+
+        // 灯箱元素
+        const lightbox = $('lightbox');
+        const lightboxImg = $('lightboxImg');
+
+        // ============================================================
+        //  LIGHTBOX 状态（缩放 + 平移）
+        // ============================================================
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        const MIN_SCALE = 0.5;
+        const MAX_SCALE = 3;
+
+        // 拖拽状态
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        let startTranslateX = 0, startTranslateY = 0;
+
+        // ============================================================
+        //  CORE FUNCTIONS
+        // ============================================================
+
+        function getStep(id) {
+            return STEPS.find(s => s.id === id);
+        }
+
+        function renderImages(step) {
+            imageGallery.innerHTML = '';
+            if (!step.images || step.images.length === 0) {
+                const div = document.createElement('div');
+                div.className = 'gallery-placeholder';
+                div.innerHTML = `<div class="icon">🖼️</div><div>No reference images</div>`;
+                imageGallery.appendChild(div);
+                return;
+            }
+            step.images.forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                const imgEl = document.createElement('img');
+                imgEl.src = img.src;
+                imgEl.alt = img.caption || `Image ${index+1}`;
+                imgEl.onerror = function() {
+                    this.style.display = 'none';
+                    const badge = this.parentElement.querySelector('.badge-count');
+                    if (badge) badge.textContent = '⚠️ missing';
+                };
+                imgEl.onclick = function(e) {
+                    e.stopPropagation();
+                    openLightbox(img.src);
+                };
+                const caption = document.createElement('div');
+                caption.className = 'caption';
+                caption.textContent = img.caption || `Image ${index+1}`;
+                const badge = document.createElement('span');
+                badge.className = 'badge-count';
+                badge.textContent = `${index+1}/${step.images.length}`;
+                item.appendChild(imgEl);
+                item.appendChild(caption);
+                item.appendChild(badge);
+                imageGallery.appendChild(item);
+            });
+        }
+
+        function renderStep(id) {
+            const step = getStep(id);
+            if (!step) {
+                showEnd('success', '✅ Diagnosis Complete', 'All checks passed – your machine is ready.');
+                return;
+            }
+            if (history.length === 0 || history[history.length - 1] !== id) {
+                history.push(id);
+            }
+            mainContent.classList.remove('hidden');
+            endPage.classList.add('hidden');
+            stepBadge.textContent = `Step ${step.id} / ${STEPS.length}`;
+            const progress = ((step.id - 1) / STEPS.length) * 100;
+            progressBar.style.width = progress + '%';
+            questionText.textContent = step.question;
+            questionDesc.textContent = step.desc;
+            stepCounter.textContent = `Step ${step.id} of ${STEPS.length}`;
+            renderImages(step);
+            btnYes.onclick = function() { handleChoice(step, true); };
+            btnNo.onclick = function() { handleChoice(step, false); };
+            btnBack.onclick = function() { goBack(); };
+            btnReset.onclick = function() { resetDiagnosis(); };
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleChoice(step, isYes) {
+            const choice = isYes ? step.yes : step.no;
+            if (choice && typeof choice === 'object' && choice.action === 'fix') {
+                alert('🔧 ' + choice.text + ' then re-check.');
+                renderStep(choice.backTo);
+                return;
+            }
+            if (choice && typeof choice === 'object' && choice.action === 'end') {
+                if (choice.result === 'fail') {
+                    showEnd('fail', '❌ Not Resolved',
+                        'You have gone through all steps but the problem persists.',
+                        'Please contact technical support with: machine model, thread brand, and photos/videos of the issue (rotary hook area).'
+                        );
+                } else {
+                    showEnd('success', '✅ Diagnosis Complete', 'The problem is solved – you can continue embroidering.');
+                }
+                return;
+            }
+            if (typeof choice === 'number') {
+                renderStep(choice);
+                return;
+            }
+            if (isYes) {
+                const next = STEPS.find(s => s.id > step.id);
+                if (next) renderStep(next.id);
+                else showEnd('success', '✅ Diagnosis Complete', 'All checks passed.');
+            } else {
+                alert('Please follow the fix instructions and re-check.');
+                renderStep(step.id);
+            }
+        }
+
+        function goBack() {
+            if (history.length <= 1) {
+                alert('You are at the first step – cannot go further back.');
+                return;
+            }
+            history.pop();
+            const prev = history[history.length - 1];
+            renderStep(prev);
+        }
+
+        function resetDiagnosis() {
+            if (confirm('Restart diagnosis? All progress will be lost.')) {
+                history = [];
+                renderStep(1);
+            }
+        }
+
+        function showEnd(type, title, desc, detail) {
+            mainContent.classList.add('hidden');
+            endPage.classList.remove('hidden');
+            $('endIcon').textContent = type === 'fail' ? '❌' : '✅';
+            $('endTitle').textContent = title;
+            $('endDesc').textContent = desc;
+            const detailEl = $('endDetail');
+            if (detail) {
+                detailEl.classList.remove('hidden');
+                detailEl.textContent = detail;
+            } else {
+                detailEl.classList.add('hidden');
+            }
+            progressBar.style.width = '100%';
+            stepBadge.textContent = 'Diagnosis ended';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        //  LIGHTBOX 控制（带缩放和平移）
+        // ============================================================
+        function updateTransform() {
+            lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // 重置状态
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            // 退出拖拽状态
+            isDragging = false;
+        }
+
+        // ---- 点击背景关闭 ----
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // ---- 滚轮缩放（以鼠标位置为中心） ----
+        lightboxImg.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const rect = lightboxImg.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;   // 0~1
+            const y = (e.clientY - rect.top) / rect.height;
+
+            const oldScale = scale;
+            const delta = e.deltaY > 0 ? -0.1 : 0.1; // 向下滚缩小，向上放大
+            let newScale = scale + delta;
+            newScale = Math.min(Math.max(newScale, MIN_SCALE), MAX_SCALE);
+
+            if (newScale === oldScale) return;
+
+            // 根据鼠标位置调整 translate，使得该点保持不变
+            const w = rect.width;
+            const h = rect.height;
+            // 新 translate = oldTranslate + (x*w) * (oldScale - newScale)  注意：因为 transform-origin 为左上角
+            translateX += x * w * (oldScale - newScale);
+            translateY += y * h * (oldScale - newScale);
+
+            scale = newScale;
+            updateTransform();
+        }, { passive: false });
+
+        // ---- 双击复位 ----
+        lightboxImg.addEventListener('dblclick', function(e) {
+            e.stopPropagation();
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        });
+
+        // ---- 拖拽平移（鼠标拖动） ----
+        lightboxImg.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startTranslateX = translateX;
+            startTranslateY = translateY;
+            lightboxImg.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            translateX = startTranslateX + dx;
+            translateY = startTranslateY + dy;
+            updateTransform();
+        });
+
+        document.addEventListener('mouseup', function(e) {
+            if (isDragging) {
+                isDragging = false;
+                lightboxImg.style.cursor = 'grab';
+            }
+        });
+
+        // 防止在拖拽时选中文本
+        lightboxImg.addEventListener('dragstart', function(e) { e.preventDefault(); });
+
+        // ---- 键盘关闭 ----
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // ============================================================
+        //  START
+        // ============================================================
+        renderStep(1);
+    </script>
+
+</body>
+</html>

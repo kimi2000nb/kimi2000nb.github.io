@@ -1,0 +1,6 @@
+{{- $src := .Get "src" -}}
+{{- $width := .Get "width" | default "100%" -}}
+{{- $height := .Get "height" | default "700" -}}
+{{- $border := .Get "border" | default "0" -}}
+
+<iframe src="{{ $src }}" width="{{ $width }}" height="{{ $height }}" frameborder="{{ $border }}" style="border-radius:12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);"></iframe>
