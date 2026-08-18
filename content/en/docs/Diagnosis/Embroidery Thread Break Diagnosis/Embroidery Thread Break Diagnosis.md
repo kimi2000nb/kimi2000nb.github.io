@@ -14,3 +14,5 @@ weight: 1
 ```
 {{< iframe src="/thread-break/deepseek1.html" width="100%" height="750" >}}
 ```
+
+<span>**Visitors** ：<img src="https://visitor-badge.laobi.icu/badge?page_id=kimi2000nb.github.io"/></span>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>故障诊断 · 图片预览标签</title>
+    <style>
+        /* ----- 全局样式 ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .preview-container {
+            max-width: 1200px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07), 0 8px 24px rgba(0, 0, 0, 0.04);
+            padding: 2rem 2rem 2.2rem;
+            transition: box-shadow 0.3s;
+        }
+
+        /* ----- Banner 区域 (左图 + 右信息) ----- */
+        .banner-wrapper {
+            display: flex;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .banner {
+            flex: 1.2 1 460px;
+            position: relative;
+            height: 380px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #d5dbe8;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            min-height: 260px;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: opacity;
+        }
+
+        .banner-image.fade {
+            opacity: 0;
+        }
+        .banner-image.show {
+            opacity: 1;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 2rem 1.5rem;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.1) 70%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .banner-title {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .banner-sub {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 0.2rem;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ----- 信息面板 (故障解释 + 解决方案) ----- */
+        .info-panel {
+            flex: 0.9 1 340px;
+            background: #f8faff;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid #edf0f5;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            min-height: 260px;
+            transition: background 0.3s;
+        }
+
+        .info-panel .info-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #6c7a9a;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-panel .info-headline {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1e2b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-panel .info-headline .badge-id {
+            background: #eef1f8;
+            color: #2d3a5e;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .info-panel .info-desc {
+            font-size: 0.92rem;
+            color: #2d3a5e;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            padding-left: 2px;
+        }
+
+        .info-panel .info-solution {
+            background: #eef4ff;
+            border-left: 4px solid #4f6ef7;
+            padding: 0.7rem 1rem 0.7rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: #1a2a4a;
+            line-height: 1.5;
+            margin-top: 0.2rem;
+        }
+
+        .info-panel .info-solution strong {
+            color: #4f6ef7;
+            font-weight: 600;
+        }
+
+        .info-panel .empty-state {
+            color: #9aa7c0;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0.8rem 0;
+        }
+
+        /* ----- 标签栏 (缩略图) ----- */
+        .tabs-wrapper {
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.4rem 0.2rem 0.6rem;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f3f6;
+        }
+
+        .tabs-wrapper::-webkit-scrollbar {
+            height: 5px;
+        }
+        .tabs-wrapper::-webkit-scrollbar-track {
+            background: #f1f3f6;
+            border-radius: 10px;
+        }
+        .tabs-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .tabs-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            min-width: max-content;
+            padding: 0.2rem 0.1rem;
+        }
+
+        /* ----- 单个标签 (Tab) ----- */
+        .tab-item {
+            flex: 0 0 160px;
+            width: 160px;
+            height: 110px;
+            border-radius: 14px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 55%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .tab-label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+            z-index: 2;
+            padding: 0 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: transform 0.3s;
+        }
+
+        .tab-item:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+            z-index: 3;
+        }
+
+        .tab-item.active {
+            border-color: #4f6ef7;
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 16px 40px rgba(79, 110, 247, 0.25), 0 4px 16px rgba(79, 110, 247, 0.10);
+            z-index: 5;
+        }
+
+        .tab-item.active .tab-label {
+            color: #ffffff;
+            transform: scale(1.06);
+            text-shadow: 0 2px 20px rgba(79, 110, 247, 0.5);
+        }
+
+        .tab-item.active::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #4f6ef7, #7c5cfc);
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(8px);
+        }
+
+        .tab-index {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 2px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .tab-item.active .tab-index {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(79, 110, 247, 0.4);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ----- 响应式 ----- */
+        @media (max-width: 820px) {
+            .banner-wrapper {
+                flex-direction: column;
+            }
+            .banner {
+                height: 300px;
+                flex: unset;
+                width: 100%;
+            }
+            .info-panel {
+                flex: unset;
+                width: 100%;
+                min-height: 180px;
+                padding: 1.2rem 1.4rem;
+            }
+            .preview-container {
+                padding: 1.2rem 1rem 1.5rem;
+            }
+            .banner-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                height: 200px;
+                border-radius: 14px;
+            }
+            .banner-overlay {
+                padding: 1rem 1.2rem 0.8rem;
+            }
+            .banner-title {
+                font-size: 1.2rem;
+            }
+            .banner-sub {
+                font-size: 0.7rem;
+            }
+            .info-panel {
+                padding: 1rem 1rem;
+                border-radius: 14px;
+                min-height: 140px;
+            }
+            .info-panel .info-headline {
+                font-size: 0.95rem;
+            }
+            .info-panel .info-desc {
+                font-size: 0.82rem;
+            }
+            .info-panel .info-solution {
+                font-size: 0.78rem;
+                padding: 0.5rem 0.8rem;
+            }
+            .tab-item {
+                flex: 0 0 110px;
+                width: 110px;
+                height: 80px;
+                border-radius: 10px;
+                border-width: 2px;
+            }
+            .tab-label {
+                font-size: 0.65rem;
+                bottom: 6px;
+            }
+            .tab-index {
+                font-size: 0.5rem;
+                top: 5px;
+                right: 6px;
+                padding: 1px 6px;
+            }
+            .tabs-list {
+                gap: 0.6rem;
+            }
+            .tab-item.active {
+                transform: translateY(-4px) scale(1.04);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .tab-index {
+                display: none;
+            }
+        }
+
+        .banner-image.loading {
+            background: linear-gradient(135deg, #e6e9f0 25%, #d5dbe8 50%, #e6e9f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preview-container">
+        <!-- ===== Banner + 信息面板 (并排) ===== -->
+        <div class="banner-wrapper">
+            <!-- 左侧图片 -->
+            <div class="banner" id="banner">
+                <div class="banner-image" id="bannerImage" style="background-image: url('');"></div>
+                <div class="banner-overlay">
+                    <h2 class="banner-title" id="bannerTitle">选择故障</h2>
+                    <p class="banner-sub" id="bannerSub">点击下方标签查看详情</p>
+                </div>
+            </div>
+
+            <!-- 右侧信息面板 -->
+            <div class="info-panel" id="infoPanel">
+                <div class="info-label">🔍 故障诊断</div>
+                <div class="info-headline" id="infoHeadline">
+                    <span id="infoName">故障名称</span>
+                    <span class="badge-id" id="infoBadge">#01</span>
+                </div>
+                <div class="info-desc" id="infoDesc">故障现象描述</div>
+                <div class="info-solution" id="infoSolution">
+                    <strong>🛠️ 解决方案</strong><br />
+                    <span id="solutionText">点击标签查看解决步骤</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 标签栏 (缩略图) ===== -->
+        <div class="tabs-wrapper">
+            <div class="tabs-list" id="tabsList">
+                <!-- JS 动态渲染 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ============================================================
+            //  故障数据：每项包含 id, title(故障名), description(现象), solution(解决方案)
+            //  图片路径已改为针对 /diagnosis/ 目录的绝对路径
+            //  请将图片文件放在 static/diagnosis/images/ 中
+            //  命名规则：大图 fault-{id}.jpg，缩略图 fault-{id}-thumb.jpg
+            //  例如：fault-1015.jpg 和 fault-1015-thumb.jpg
+            // ============================================================
+            const FAULT_DATA = [{
+                id: 1015,
+                title: '网络延迟过高',
+                description: '用户访问页面时响应缓慢，平均延迟超过 800ms，部分请求超时。',
+                solution: '1. 检查 CDN 节点状态，切换至备用节点。\n2. 优化后端接口，增加 Redis 缓存。\n3. 扩容带宽并启用 HTTP/2。'
+            }, {
+                id: 1016,
+                title: '数据库连接池耗尽',
+                description: '应用日志频繁出现 "Connection pool exhausted" 错误，导致服务间歇性不可用。',
+                solution: '1. 调整连接池最大连接数 (maxTotal) 至 200。\n2. 检查慢查询并添加索引。\n3. 配置连接超时和回收策略。'
+            }, {
+                id: 1018,
+                title: '磁盘 I/O 瓶颈',
+                description: '系统负载飙升，磁盘读写延迟达到 150ms，影响数据库写入性能。',
+                solution: '1. 升级至 SSD 固态硬盘。\n2. 调整系统 I/O 调度器为 deadline。\n3. 迁移部分冷数据至对象存储。'
+            }, {
+                id: 1020,
+                title: '内存泄漏 (JS)',
+                description: '前端页面长时间运行后内存占用持续增长，最终导致页面卡顿或崩溃。',
+                solution: '1. 使用 Chrome DevTools 定位未释放的事件监听器。\n2. 清理定时器 (setInterval) 和全局变量。\n3. 改用 WeakMap 缓存 DOM 引用。'
+            }, {
+                id: 1024,
+                title: 'SSL 证书过期',
+                description: '浏览器显示 "您的连接不是私密连接"，证书已过期 7 天，影响用户信任。',
+                solution: '1. 重新申请并部署新证书 (Let\'s Encrypt)。\n2. 设置自动续期脚本 (certbot renew)。\n3. 检查证书链完整性。'
+            }, {
+                id: 1025,
+                title: 'API 限流误伤',
+                description: '正常用户请求被限流中间件拦截，返回 429 状态码，影响业务。',
+                solution: '1. 调整限流阈值，区分 VIP 和普通用户。\n2. 使用滑动窗口算法替代固定窗口。\n3. 增加白名单机制。'
+            }, {
+                id: 1027,
+                title: 'DNS 解析异常',
+                description: '部分地区用户无法解析域名，出现 "ERR_NAME_NOT_RESOLVED" 错误。',
+                solution: '1. 更换权威 DNS 服务商 (如 Cloudflare)。\n2. 增加 TTL 值至 600s。\n3. 配置多地域 DNS 解析。'
+            }, {
+                id: 1035,
+                title: '容器 OOM (内存溢出)',
+                description: 'Kubernetes Pod 频繁 OOMKilled，容器内存使用超限，服务重启。',
+                solution: '1. 增加 Pod 内存 limit 至 4Gi。\n2. 分析 Heap Dump 找出内存占用对象。\n3. 优化 JVM 参数 (Xmx/Xms)。'
+            }, {
+                id: 1039,
+                title: 'CDN 缓存雪崩',
+                description: '大量缓存同时失效，回源请求暴增，导致源站压力过大。',
+                solution: '1. 将缓存过期时间设置随机偏移 (1-5 分钟)。\n2. 启用二级缓存 (L2 Cache)。\n3. 预热热点数据。'
+            }, {
+                id: 1040,
+                title: '日志存储告警',
+                description: '日志磁盘使用率超过 85%，触发告警，可能影响日志写入。',
+                solution: '1. 配置日志滚动策略 (按大小/时间)。\n2. 将旧日志归档至低成本存储。\n3. 减少不必要的 DEBUG 日志。'
+            }];
+
+            // ============================================================
+            //  图片路径：使用针对 /diagnosis/ 目录的绝对路径
+            //  大图：/diagnosis/images/fault-{id}.jpg
+            //  缩略图：/diagnosis/images/fault-{id}-thumb.jpg
+            // ============================================================
+            const getImageUrl = (id) => `/diagnosis/images/fault-${id}.jpg`;
+            const getThumbUrl = (id) => `/diagnosis/images/fault-${id}-thumb.jpg`;
+
+            // ---------- DOM 引用 ----------
+            const tabsList = document.getElementById('tabsList');
+            const bannerImage = document.getElementById('bannerImage');
+            const bannerTitle = document.getElementById('bannerTitle');
+            const bannerSub = document.getElementById('bannerSub');
+
+            const infoName = document.getElementById('infoName');
+            const infoBadge = document.getElementById('infoBadge');
+            const infoDesc = document.getElementById('infoDesc');
+            const solutionText = document.getElementById('solutionText');
+
+            // ---------- 状态 ----------
+            let currentIndex = 0;
+            const total = FAULT_DATA.length;
+            let isTransitioning = false;
+
+            // ---------- 渲染标签 ----------
+            function renderTabs() {
+                let html = '';
+                FAULT_DATA.forEach((item, index) => {
+                    const activeClass = index === 0 ? 'active' : '';
+                    const thumbUrl = getThumbUrl(item.id);
+                    html += `
+                        <div class="tab-item ${activeClass}" 
+                             data-index="${index}" 
+                             style="background-image: url('${thumbUrl}');"
+                             role="button" 
+                             tabindex="0"
+                             aria-label="查看故障：${item.title}">
+                            <span class="tab-index">${String(index + 1).padStart(2, '0')}</span>
+                            <span class="tab-label">${item.title}</span>
+                        </div>
+                    `;
+                });
+                tabsList.innerHTML = html;
+
+                const items = tabsList.querySelectorAll('.tab-item');
+                items.forEach((item) => {
+                    item.addEventListener('click', function() {
+                        const idx = parseInt(this.dataset.index, 10);
+                        if (idx !== currentIndex) setActiveTab(idx);
+                    });
+                    item.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const idx = parseInt(this.dataset.index, 10);
+                            if (idx !== currentIndex) setActiveTab(idx);
+                        }
+                    });
+                });
+            }
+
+            // ---------- 设置激活标签 & 更新所有内容 ----------
+            function setActiveTab(index) {
+                if (isTransitioning || index === currentIndex) return;
+                if (index < 0 || index >= total) return;
+
+                isTransitioning = true;
+
+                const items = tabsList.querySelectorAll('.tab-item');
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+
+                currentIndex = index;
+
+                updateBanner(index, () => {
+                    isTransitioning = false;
+                });
+
+                updateInfoPanel(index);
+
+                const activeItem = items[index];
+                if (activeItem) {
+                    const wrapper = tabsList.parentElement;
+                    const itemLeft = activeItem.offsetLeft;
+                    const itemWidth = activeItem.offsetWidth;
+                    const wrapperWidth = wrapper.clientWidth;
+                    if (itemLeft < wrapper.scrollLeft || itemLeft + itemWidth > wrapper.scrollLeft + wrapperWidth) {
+                        wrapper.scrollTo({
+                            left: itemLeft - (wrapperWidth - itemWidth) / 2,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+
+            // ---------- 更新 Banner 图片 ----------
+            function updateBanner(index, callback) {
+                const item = FAULT_DATA[index];
+                const url = getImageUrl(item.id);
+
+                bannerImage.classList.remove('show');
+                bannerImage.classList.add('fade');
+
+                bannerTitle.textContent = item.title;
+                bannerSub.textContent = `故障 ${index + 1} / ${total} · 点击标签切换`;
+
+                const imgLoader = new Image();
+                imgLoader.onload = () => {
+                    bannerImage.style.backgroundImage = `url('${url}')`;
+                    bannerImage.classList.remove('fade');
+                    bannerImage.classList.add('show');
+                    if (callback) callback();
+                };
+                imgLoader.onerror = () => {
+                    // 图片加载失败时使用渐变占位
+                    bannerImage.style.backgroundImage = `linear-gradient(135deg, #4f6ef7, #7c5cfc)`;
+                    bannerImage.classList.remove('fade');
+                    bannerImage.classList.add('show');
+                    if (callback) callback();
+                };
+                imgLoader.src = url;
+
+                // 超时保护
+                setTimeout(() => {
+                    if (bannerImage.classList.contains('fade')) {
+                        bannerImage.style.backgroundImage = `url('${url}')`;
+                        bannerImage.classList.remove('fade');
+                        bannerImage.classList.add('show');
+                        if (callback) callback();
+                    }
+                }, 5000);
+            }
+
+            // ---------- 更新信息面板 ----------
+            function updateInfoPanel(index) {
+                const item = FAULT_DATA[index];
+                infoName.textContent = item.title;
+                infoBadge.textContent = `#${String(index + 1).padStart(2, '0')}`;
+                infoDesc.textContent = item.description;
+                const solutionHtml = item.solution.replace(/\n/g, '<br />');
+                solutionText.innerHTML = solutionHtml;
+            }
+
+            // ---------- 初始化 ----------
+            function init() {
+                renderTabs();
+
+                const first = FAULT_DATA[0];
+                bannerImage.style.backgroundImage = `url('${getImageUrl(first.id)}')`;
+                bannerImage.classList.add('show');
+                bannerTitle.textContent = first.title;
+                bannerSub.textContent = `故障 1 / ${total} · 点击标签切换`;
+
+                updateInfoPanel(0);
+
+                const firstTab = tabsList.querySelector('.tab-item');
+                if (firstTab) firstTab.classList.add('active');
+
+                window.setActiveTab = setActiveTab;
+                console.log(`✅ 故障诊断预览已加载，共 ${total} 个故障（图片路径：/diagnosis/images/）`);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+        })();
+    </script>
+
+</body>
+</html>
