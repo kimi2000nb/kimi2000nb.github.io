@@ -108,6 +108,11 @@
     <loc>https://kimi2000nb.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="no"
+                href="https://kimi2000nb.github.io/no/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="https://kimi2000nb.github.io/categories/"
                 />
@@ -115,11 +120,6 @@
                 rel="alternate"
                 hreflang="fa"
                 href="https://kimi2000nb.github.io/fa/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="no"
-                href="https://kimi2000nb.github.io/no/categories/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/community/</loc>
