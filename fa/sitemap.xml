@@ -22,6 +22,11 @@
     <loc>https://kimi2000nb.github.io/fa/tags/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="fa"
+                href="https://kimi2000nb.github.io/fa/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/tags/"
                 />
@@ -29,11 +34,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://kimi2000nb.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fa"
-                href="https://kimi2000nb.github.io/fa/tags/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/fa/</loc>
