@@ -341,7 +341,6 @@ author: Kimi Embroidery Repair Tech Station
       </div>
     </div>
   </div>
-
   <div class="sub-item">
     <div class="sub-header" data-sub="B2">
       <span>⚙️ Machine Setup</span><span class="arrow">▾</span>
@@ -362,7 +361,7 @@ author: Kimi Embroidery Repair Tech Station
           <p class="step-text"><span class="step-number">3</span>Bobbin — slightly looser</p>
         </div>
         <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-m4.jpg" class="step-img" alt="Needle"></div>
+          <div class="step-img-wrapper"><img src="cap-m4.png" class="step-img" alt="Needle"></div>
           <p class="step-text"><span class="step-number">4</span>Correct needle size</p>
         </div>
       </div>
@@ -381,24 +380,17 @@ author: Kimi Embroidery Repair Tech Station
           <p class="step-text"><span class="step-number">1</span>Density too high</p>
         </div>
         <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-d2.jpg" class="step-img" alt="Underlay"></div>
+          <div class="step-img-wrapper"><img src="cap-d2.png" class="step-img" alt="Underlay"></div>
           <p class="step-text"><span class="step-number">2</span>Incorrect underlay</p>
         </div>
         <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-d3.jpg" class="step-img" alt="Stitch direction"></div>
-          <p class="step-text"><span class="step-number">3</span>Stitch direction — curved surface</p>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-d4.jpg" class="step-img" alt="Design size"></div>
-          <p class="step-text"><span class="step-number">4</span>Design too large for cap</p>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-d5.jpg" class="step-img" alt="Pull comp"></div>
-          <p class="step-text"><span class="step-number">5</span>Excessive pull comp</p>
+          <div class="step-img-wrapper"><img src="cap-d3.png" class="step-img" alt="Design size"></div>
+          <p class="step-text"><span class="step-number">3</span>Hat embroidery should stitch from the center outward to both sides.</p>
         </div>
       </div>
     </div>
   </div>
+
 
   <div class="sub-item">
     <div class="sub-header" data-sub="B4">
@@ -416,13 +408,9 @@ author: Kimi Embroidery Repair Tech Station
           <p class="step-text"><span class="step-number">2</span>Clean rotary hook area</p>
         </div>
         <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-hw3.jpg" class="step-img" alt="Hook tip"></div>
-          <p class="step-text"><span class="step-number">3</span>Check hook tip for wear</p>
-        </div>
-        <div class="col-6 col-md-4">
-          <div class="step-img-wrapper"><img src="cap-hw4.jpg" class="step-img" alt="Timing"></div>
-          <p class="step-text"><span class="step-number">4</span>Timing at 202° — last resort</p>
-        </div>
+          <div class="step-img-wrapper"><img src="cap-hw3.jpg" class="step-img" alt="Timing"></div>
+          <p class="step-text"><span class="step-number">3</span>Timing at 202° — last resort</p>
+        </div>       
       </div>
     </div>
   </div>
