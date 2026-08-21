@@ -391,7 +391,6 @@ author: Kimi Embroidery Repair Tech Station
     </div>
   </div>
 
-
   <div class="sub-item">
     <div class="sub-header" data-sub="B4">
       <span>🔧 Hardware &amp; Timing</span><span class="arrow">▾</span>
@@ -414,6 +413,7 @@ author: Kimi Embroidery Repair Tech Station
       </div>
     </div>
   </div>
+
 
   <div class="verification-box">
     <strong>✅ Verification:</strong> Run a test on the same cap. If the bird's nest disappears, the issue is resolved.
