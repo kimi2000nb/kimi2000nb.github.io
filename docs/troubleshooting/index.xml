@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://kimi2000nb.github.io/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Timing Issue at 202° – Symptoms, Confirmation, and Fix</title>
+				<link>https://kimi2000nb.github.io/docs/troubleshooting/timing/</link>
+				<pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/docs/troubleshooting/timing/</guid>
+				<description>&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#prerequisite&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;After checking the thread path, needle orientation, and other common causes, a small number of machines may have a timing issue.&lt;/strong&gt;&lt;br&gt;&#xA;&lt;strong&gt;This problem is most likely to occur after a severe bird’s nest or thread jam.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-symptoms&#34;&gt;1. Symptoms&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#1-symptoms&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;If you observe any of the following, and thread path, needle direction, and tension are already confirmed correct:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Frequent needle breaks&lt;/strong&gt; (bent or broken needle tips)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rotary hook fails to catch the upper thread loop&lt;/strong&gt; (skipped stitches)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Bobbin thread cannot be picked up&lt;/strong&gt; (loops not formed)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If these symptoms persist despite correct thread path and needle orientation, check the timing.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Why Incorrect Needle Direction Causes Thread Breaks</title>
 				<link>https://kimi2000nb.github.io/docs/troubleshooting/fix-embroidery-thread-breaks/</link>
