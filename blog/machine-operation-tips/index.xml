@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Machine Operation Tips on kimi</title>
+		<link>https://kimi2000nb.github.io/blog/machine-operation-tips/</link>
+		<description>Recent content in Machine Operation Tips on kimi</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://kimi2000nb.github.io/blog/machine-operation-tips/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Move Frame Along Design Border Error on Round Hoop</title>
+				<link>https://kimi2000nb.github.io/blog/2026/07/10/error-on-round-hoop/</link>
+				<pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/blog/2026/07/10/error-on-round-hoop/</guid>
+				<description>&lt;h1 id=&#34;move-frame-along-design-border-error-on-round-hoop&#34;&gt;Move Frame Along Design Border Error on Round Hoop&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#move-frame-along-design-border-error-on-round-hoop&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;img src=&#34;Design_Border_Error.jpg&#34; alt=&#34;Design_Border_Error&#34; style=&#34;width:100%; max-width:600px; height:auto;&#34;&gt;&#xA;&lt;p&gt;When using a round embroidery hoop, the machine may display an error when using &lt;strong&gt;Move Frame Along Design Border&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This does not necessarily mean there is a problem with the machine. The error can occur because the design dimensions exceed the usable embroidery area of the round hoop.&lt;/p&gt;&#xA;&lt;h2 id=&#34;move-frame-along-design-border&#34;&gt;Move Frame Along Design Border&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#move-frame-along-design-border&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Move Frame Along Design Border&lt;/strong&gt; follows the design&amp;rsquo;s maximum width and height.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Resizing Embroidery Designs</title>
+				<link>https://kimi2000nb.github.io/blog/2026/07/10/resize-the-design/</link>
+				<pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/blog/2026/07/10/resize-the-design/</guid>
+				<description>&lt;h1 id=&#34;resizing-embroidery-designs&#34;&gt;Resizing Embroidery Designs&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#resizing-embroidery-designs&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#overview&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;img src=&#34;hooperror8024434.jpg&#34; alt=&#34;hooperror&#34; style=&#34;width:100%; max-width:800px; height:auto;&#34;&gt;&#xA;&lt;p&gt;If an embroidery design does not fit inside the hoop, you can use the resize function to enlarge or reduce the design size.&lt;/p&gt;&#xA;&lt;h2 id=&#34;scaling-control&#34;&gt;Scaling Control&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#scaling-control&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;img src=&#34;Scaling_Control8024434.jpg&#34; alt=&#34;Scaling_Control&#34; style=&#34;width:100%; max-width:800px; height:auto;&#34;&gt;&#xA;&lt;p&gt;Keep the scaling range between &lt;strong&gt;90% and 110%&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;X controls the width percentage.&lt;/strong&gt; Keep it between 90% and 110%.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Y controls the length percentage.&lt;/strong&gt; Keep it between 90% and 110%.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;important&#34;&gt;Important&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#important&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Adjust X and Y carefully to maintain the correct design proportions.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
