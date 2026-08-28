@@ -12,6 +12,33 @@
     <loc>https://kimi2000nb.github.io/docs/diagnosis/symptom-diagnosis/symptom-diagnosis/</loc>
     <lastmod>2026-08-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://kimi2000nb.github.io/blog/</loc>
+    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/</loc>
+    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="no"
+                href="https://kimi2000nb.github.io/no/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fa"
+                href="https://kimi2000nb.github.io/fa/"
+                />
+  </url><url>
+    <loc>https://kimi2000nb.github.io/blog/machine-operation-tips/</loc>
+    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/blog/2026/08/28/reporting-an-embroidery-machine-problem/</loc>
+    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kimi2000nb.github.io/docs/troubleshooting/timing/</loc>
     <lastmod>2026-08-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -34,32 +61,8 @@
                 href="https://kimi2000nb.github.io/no/docs/"
                 />
   </url><url>
-    <loc>https://kimi2000nb.github.io/</loc>
-    <lastmod>2026-08-19T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="no"
-                href="https://kimi2000nb.github.io/no/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fa"
-                href="https://kimi2000nb.github.io/fa/"
-                />
-  </url><url>
     <loc>https://kimi2000nb.github.io/docs/troubleshooting/</loc>
     <lastmod>2026-08-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/blog/</loc>
-    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/blog/machine-operation-tips/</loc>
-    <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kimi2000nb.github.io/blog/2026/07/10/error-on-round-hoop/</loc>
     <lastmod>2026-07-10T00:00:00+00:00</lastmod>
@@ -123,11 +126,6 @@
     <loc>https://kimi2000nb.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="fa"
                 href="https://kimi2000nb.github.io/fa/categories/"
                 />
@@ -135,6 +133,11 @@
                 rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/categories/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/community/</loc>
