@@ -1,7 +1,7 @@
 ---
 date: 2026-07-08
 title: How to Fix CAN1 Send Message Queue Full Error (10000360 Info)
-linkTitle: CAN1 Send Message Queue Full Error
+linkTitle: 0360 CAN1 Send Message Queue Full Error
 description: >
   Troubleshooting CAN1 Send Message Queue Full Error (10000360 Info) 
   (Error! [10000001] info(00000000)) on SmartStitch embroidery machines.

@@ -1,7 +1,7 @@
 ---
 date: 2026-07-08
 title: How to Fix CMD TASK send message queue is full Error!(10000368 )info(00000000)
-linkTitle: CMD TASK send message queue is full Error!
+linkTitle: 0368 CMD TASK send message queue is full Error!
 description: >
   Troubleshooting CMD TASK send message queue is full Error! (10000368 )info(00000000) on SmartStitch embroidery machines.author: Kimi Embroidery Repair Tech Station
 

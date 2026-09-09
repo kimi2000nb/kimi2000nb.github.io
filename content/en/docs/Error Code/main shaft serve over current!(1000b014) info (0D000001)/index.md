@@ -1,7 +1,7 @@
 ---
 date: 2026-07-08
 title: How to Fix Main Shaft Servo Over Current Error (1000B014) info (0D000001)
-linkTitle: Main Shaft Servo Over Current Error
+linkTitle: B014 Main Shaft Servo Over Current Error
 description: >
   Troubleshooting Main Shaft Servo Over Current Error (1000B014) info (0D000001)
   info (0D000001) on SmartStitch embroidery machines.

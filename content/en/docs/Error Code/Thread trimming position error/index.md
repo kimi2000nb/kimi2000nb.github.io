@@ -1,7 +1,7 @@
 ---
 date: 2026-07-08
 title: How to Fix Thread trimming position error! Thread trimming mechanism 1[1D000052)info(0o00o000)
-linkTitle: Thread trimming position error!
+linkTitle: 0052 Thread trimming position error!
 description: >
   Troubleshooting Thread trimming position error! Thread trimming mechanism 1[1D000052)info(0o00o000) on SmartStitch embroidery machines.
 author: Kimi Embroidery Repair Tech Station

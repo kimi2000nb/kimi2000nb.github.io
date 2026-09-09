@@ -79,34 +79,37 @@
     <loc>https://kimi2000nb.github.io/docs/troubleshooting/fix-embroidery-thread-breaks/</loc>
     <lastmod>2026-07-10T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/featured-main-shaft-error/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/the-m4-does-not-match-emb-version/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/thread-trimming-position-error/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/can1-send-message-queue-full-error/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/cmd-task-send-message-queue-is-full/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/the-magnetic-strength-of-the-bottom-lnspectlon-plate-is-not-in-the-proper-range/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/error-code/main-shaft-serve-over-current1000b014-info-0d000001/</loc>
+    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kimi2000nb.github.io/docs/repair/installing-the-plastic-washer-on-the-bobbin-door/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/can1-send-message-queue-full-error/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/cmd-task-send-message-queue-is-full/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/the-m4-does-not-match-emb-version/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/featured-main-shaft-error/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/main-shaft-serve-over-current1000b014-info-0d000001/</loc>
+    <loc>https://kimi2000nb.github.io/docs/error-code/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/repair/how-to-replace-and-adjust-the-presser-foot/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/repair/</loc>
-    <lastmod>2026-07-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/troubleshooting/error-code/thread-trimming-position-error/</loc>
     <lastmod>2026-07-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kimi2000nb.github.io/about/</loc>
@@ -126,6 +129,11 @@
     <loc>https://kimi2000nb.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="fa"
                 href="https://kimi2000nb.github.io/fa/categories/"
                 />
@@ -133,11 +141,6 @@
                 rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/categories/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/community/</loc>
@@ -193,11 +196,6 @@
     <loc>https://kimi2000nb.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="fa"
                 href="https://kimi2000nb.github.io/fa/tags/"
                 />
@@ -205,6 +203,11 @@
                 rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/tags/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/machine-settings/how-to-adjust-thread-trimming-parameters/</loc>

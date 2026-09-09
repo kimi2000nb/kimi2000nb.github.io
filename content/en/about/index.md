@@ -24,7 +24,7 @@ menu: { main: { weight: 10 } }
 
 Welcome to **Kimi Embroidery Repair Tech Station** – a free, practical knowledge base built by and for embroidery machine professionals.
 
-This site is maintained by a team of technicians with **over a decade of combined experience** in diagnosing, repairing, and maintaining industrial embroidery machines (including Tajima, Barudan, Happy, ZSK, and many others). Every guide, error code table, and maintenance tip you find here comes from **real‑world repair cases we have personally handled**, not from generic manuals.
+This site is maintained by a team of technicians with **over a decade of combined experience** in diagnosing, repairing, and maintaining industrial embroidery machines (including Tajima, brother, smartstitch, and many others). Every guide, error code table, and maintenance tip you find here comes from **real‑world repair cases we have personally handled**, not from generic manuals.
 
 **What you can explore here:**
 - Step‑by‑step fault diagnosis and error‑code solutions
@@ -51,7 +51,7 @@ We understand that every minute of machine downtime costs you time and money. Th
 
 {{% blocks/section type="h1" %}}
 
-**📅 Last updated: August 2026** – This site is actively maintained. New content is added regularly.
+**📅 Last updated: September 2026** – This site is actively maintained. New content is added regularly.
 
 If you find this resource helpful, please share it with fellow embroidery technicians. Feedback and corrections are always welcome via our Facebook page.
 
