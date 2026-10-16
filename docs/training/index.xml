@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Training on kimi</title>
+		<link>https://kimi2000nb.github.io/docs/training/</link>
+		<description>Recent content in Training on kimi</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://kimi2000nb.github.io/docs/training/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>SmartStitch Machine Training</title>
+				<link>https://kimi2000nb.github.io/docs/training/smartstitch-machine-model-selector-3/</link>
+				<pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://kimi2000nb.github.io/docs/training/smartstitch-machine-model-selector-3/</guid>
+				<description>&lt;div class=&#34;model-switcher&#34; style=&#34;margin: 0 0 1rem 0;&#34;&gt;&#xA;  &lt;label for=&#34;model-select&#34;&gt;&lt;strong&gt;Select Model:&lt;/strong&gt;&lt;/label&gt;&#xA;  &lt;select id=&#34;model-select&#34;&gt;&#xA;    &lt;option value=&#34;s-1001&#34;&gt;S-1001&lt;/option&gt;&#xA;    &lt;option value=&#34;s-1201-plus&#34;&gt;S-1201 Plus&lt;/option&gt;&#xA;    &lt;option value=&#34;s-1501&#34;&gt;S-1501&lt;/option&gt;&#xA;    &lt;option value=&#34;s-1501-plus&#34;&gt;S-1501 Plus&lt;/option&gt;&#xA;    &lt;option value=&#34;s-1501-ultra&#34;&gt;S-1501 Ultra&lt;/option&gt;&#xA;    &lt;option value=&#34;s-1502HC&#34;&gt;S-1502HC&lt;/option&gt;&#xA;  &lt;/select&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;model-panel&#34; data-model=&#34;s-1001&#34;&gt;&#xA;  &lt;h2&gt;S-1001 Training&lt;/h2&gt;&#xA;&lt;h2 id=&#34;s-1001-training&#34;&gt;S-1001 Training&lt;a class=&#34;td-heading-self-link&#34; href=&#34;#s-1001-training&#34; aria-label=&#34;Heading self-link&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;When you receive S-1001 machine, please follow these steps to get started. After you finish all these steps CORRECTLY, we can make an appointment to get training.&lt;/p&gt;&#xA;&lt;p&gt;Step 1: Unpacking the Machine&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://youtu.be/pJonKXWWkhw?si=Zbd1n2u37EFNMCme&#34;&gt;https://youtu.be/pJonKXWWkhw?si=Zbd1n2u37EFNMCme&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Step 2: Assembly of Stand&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://youtu.be/-7_IV6BOQ8Q?si=5mEnQE5eR0lxNvmW&#34;&gt;https://youtu.be/-7_IV6BOQ8Q?si=5mEnQE5eR0lxNvmW&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Step 3: Threading (Important!)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://youtu.be/QmZdNu7-1_s?si=RlY5Vo5abZ77TeNd&#34;&gt;https://youtu.be/QmZdNu7-1_s?si=RlY5Vo5abZ77TeNd&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 4: Uninstall Cap Driver&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://youtu.be/J_MUR3s_mow?si=wpDRzNTSP9OqVX2q&#34;&gt;https://youtu.be/J_MUR3s_mow?si=wpDRzNTSP9OqVX2q&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Step 5: Loading a Bobbin Into Case&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

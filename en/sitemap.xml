@@ -12,11 +12,24 @@
     <loc>https://kimi2000nb.github.io/docs/diagnosis/symptom-diagnosis/symptom-diagnosis/</loc>
     <lastmod>2026-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kimi2000nb.github.io/blog/</loc>
-    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+    <loc>https://kimi2000nb.github.io/docs/diagnosis/</loc>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/</loc>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/docs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="no"
+                href="https://kimi2000nb.github.io/no/docs/"
+                />
   </url><url>
     <loc>https://kimi2000nb.github.io/</loc>
-    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -33,6 +46,18 @@
                 href="https://kimi2000nb.github.io/fa/"
                 />
   </url><url>
+    <loc>https://kimi2000nb.github.io/docs/diagnosis/training/smartstitch-machine-model-selector-3/</loc>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/training/smartstitch-machine-model-selector-3/</loc>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/docs/training/</loc>
+    <lastmod>2026-10-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kimi2000nb.github.io/blog/</loc>
+    <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://kimi2000nb.github.io/blog/machine-operation-tips/</loc>
     <lastmod>2026-08-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -44,22 +69,6 @@
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/diagnosis/birdnest/</loc>
     <lastmod>2026-08-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/diagnosis/</loc>
-    <lastmod>2026-08-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kimi2000nb.github.io/docs/</loc>
-    <lastmod>2026-08-19T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/docs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="no"
-                href="https://kimi2000nb.github.io/no/docs/"
-                />
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/troubleshooting/</loc>
     <lastmod>2026-08-19T00:00:00+00:00</lastmod>
@@ -196,6 +205,11 @@
     <loc>https://kimi2000nb.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="https://kimi2000nb.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="fa"
                 href="https://kimi2000nb.github.io/fa/tags/"
                 />
@@ -203,11 +217,6 @@
                 rel="alternate"
                 hreflang="no"
                 href="https://kimi2000nb.github.io/no/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://kimi2000nb.github.io/tags/"
                 />
   </url><url>
     <loc>https://kimi2000nb.github.io/docs/machine-settings/how-to-adjust-thread-trimming-parameters/</loc>

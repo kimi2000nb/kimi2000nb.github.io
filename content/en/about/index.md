@@ -51,7 +51,7 @@ We understand that every minute of machine downtime costs you time and money. Th
 
 {{% blocks/section type="h1" %}}
 
-**📅 Last updated: September 2026** – This site is actively maintained. New content is added regularly.
+**📅 Last updated: October 2026** – This site is actively maintained. New content is added regularly.
 
 If you find this resource helpful, please share it with fellow embroidery technicians. Feedback and corrections are always welcome via our Facebook page.
 
